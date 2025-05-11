@@ -62,10 +62,9 @@
     <div class="bg-white shadow-lg rounded-2xl p-8 ring-1 ring-slate-100">
       <h3 class="text-lg font-semibold">TL;DR</h3>
       <p class="mt-2 leading-relaxed">
-        <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。Retrieval‑Augmented Generation (RAG) や
-        合成データ生成パイプラインを活用し、対話・作文の品質を GPT‑3.5 と同等レベルまで向上させました。
-        オープンライセンス (Apache 2.0) でモデル・学習コードを公開し、学術研究および産業応用を加速します。
-      </p>
+        <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。LLM、Tanuki-8B および
+Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8Bは 10B級サイズのモデルを上回る性能を示し、Tanuki 8x8B は国内でフルスクラッチから開発されたモデル
+の中でトップレベルの性能を達成しました。（2024年8月末時点） </p>
     </div>
   </section>
 
@@ -73,7 +72,7 @@
   <section class="mt-24 mb-32">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold">Tanuki in Action</h3>
-      <p class="mt-4 text-gray-600">実際のデモ動画やワークフローをご覧ください。</p>
+      <p class="mt-4 text-gray-600">使い方やデモ（Coming soonn）をご覧ください。</p>
 
       <!-- YouTube playlist 埋め込み -->
       <div class="mt-10 aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg">
@@ -86,13 +85,15 @@
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
           <h4 class="font-semibold mb-2">👍 改善点</h4>
-          <p>RAG により最新ニュースも正確に引用しながら回答可能。</p>
-          <p class="mt-1">和歌・俳句生成において BLEU が 18% → 32% に向上。</p>
+          <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証した．   </p>
+          <p class="mt-1">＊＊＊＊＊。</p>
+          <p> アップサイクリングを使用し，学習途中のTanuki 8BをベースにMoE形式のTanuki 8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発である．</p>
+          <p class="mt-1">和＊＊＊＊＊。</p>        
         </div>
         <div class="p-6 bg-red-50 border border-red-200 rounded-xl">
           <h4 class="font-semibold mb-2">👎 制限事項</h4>
-          <p>140 文字以上の長文要約では一部事実混入が生じることがある。</p>
-          <p class="mt-1">多言語 (特に中文) での推論精度は GPT‑3.5 に未到達。</p>
+          <p>LLMの安全性に関しては確認が未検証/p>
+          <p class="mt-1">＊＊＊＊＊。</p>
         </div>
       </div>
     </div>
