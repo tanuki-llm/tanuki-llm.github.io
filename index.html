@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,11 +12,17 @@
   <!-- Google Fonts（好みで変更可）-->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
     /* hero 背景グラデーション */
-    .hero-bg { background: radial-gradient(circle at 30% 30%, rgba(99,102,241,.25), rgba(236, 72, 153,.15) 60%, rgba(255,255,255,0)); }
+    .hero-bg {
+      background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, .25), rgba(236, 72, 153, .15) 60%, rgba(255, 255, 255, 0));
+    }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900">
 
   <!-- ===== Hero ===== -->
@@ -30,29 +37,31 @@
       </h2>
 
       <!-- “タグ” のような小バッジ -->
-      <a class="inline-block mt-6 px-4 py-1.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition" href="https://tanuki-llm.github.io" target="_blank" rel="noopener">
+      <a class="inline-block mt-6 px-4 py-1.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition"
+        href="https://tanuki-llm.github.io" target="_blank" rel="noopener">
         2025 Project Report
       </a>
 
       <!-- ボタン群 -->
       <nav class="flex flex-wrap justify-center gap-3 mt-10">
-        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" 
-           href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener"> Code</a>
+        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium"
+          href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener"> Code</a>
 
         <!-- 論文 PDF 等が用意できたらリンク先を差し替え -->
-        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" 
-           href="#" target="_blank" rel="noopener"> Paper</a>
+        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" href="#"
+          target="_blank" rel="noopener"> Paper</a>
 
         <!-- 任意のブログや記事 -->
-        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" 
-           href="#" target="_blank" rel="noopener"> Blog</a>
+        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" href="#"
+          target="_blank" rel="noopener"> Blog</a>
 
         <!-- NotebookLM などの要約ページ -->
-        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" 
-           href="#" target="_blank" rel="noopener"> Summary</a>
+        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" href="#"
+          target="_blank" rel="noopener"> Summary</a>
 
-        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium" 
-           href="https://www.youtube.com/playlist?list=PLT07SIG9QbZzyqeK7AQMvvN0EqvJ7EvwP" target="_blank" rel="noopener"> Demo</a>
+        <a class="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition text-sm font-medium"
+          href="https://www.youtube.com/playlist?list=PLT07SIG9QbZzyqeK7AQMvvN0EqvJ7EvwP" target="_blank"
+          rel="noopener"> Demo</a>
       </nav>
     </div>
   </header>
@@ -63,8 +72,10 @@
       <h3 class="text-lg font-semibold">TL;DR</h3>
       <p class="mt-2 leading-relaxed">
         <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。LLM、Tanuki-8B および
-Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8Bは 10B級サイズのモデルを上回る性能を示し、Tanuki 8x8B は国内でフルスクラッチから開発されたモデル
-の中でトップレベルの性能を達成しました。（2024年8月末時点） </p>
+        Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8Bは 10B級サイズのモデルを上回る性能を示し、Tanuki 8x8B
+        は国内でフルスクラッチから開発されたモデル
+        の中でトップレベルの性能を達成しました。（2024年8月末時点）
+      </p>
     </div>
   </section>
 
@@ -77,18 +88,19 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
       <!-- YouTube playlist 埋め込み -->
       <div class="mt-10 aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe class="w-full h-full"
-          src="https://www.youtube.com/embed/videoseries?list=PLT07SIG9QbZzyqeK7AQMvvN0EqvJ7EvwP"
-          title="Tanuki demos" frameborder="0" allowfullscreen></iframe>
+          src="https://www.youtube.com/embed/videoseries?list=PLT07SIG9QbZzyqeK7AQMvvN0EqvJ7EvwP" title="Tanuki demos"
+          frameborder="0" allowfullscreen></iframe>
       </div>
 
       <!-- ポジティブ / ネガティブ例（任意）-->
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
           <h4 class="font-semibold mb-2">👍 改善点</h4>
-          <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証した．   </p>
+          <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証した． </p>
           <p class="mt-1">＊＊＊＊＊。</p>
-          <p> アップサイクリングを使用し，学習途中のTanuki 8BをベースにMoE形式のTanuki 8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発である．</p>
-          <p class="mt-1">和＊＊＊＊＊。</p>        
+          <p> アップサイクリングを使用し，学習途中のTanuki 8BをベースにMoE形式のTanuki
+            8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発である．</p>
+          <p class="mt-1">和＊＊＊＊＊。</p>
         </div>
         <div class="p-6 bg-red-50 border border-red-200 rounded-xl">
           <h4 class="font-semibold mb-2">👎 制限事項</h4>
@@ -106,9 +118,11 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
 
       <!-- 画像＋キャプション -->
       <figure class="mt-10 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <img src="Result_1.png" alt="Evaluation result comparing Tanuki 8x8B and GPT‑4o‑mini" class="w-full object-cover" />
+        <img src="Result_1.png" alt="Evaluation result comparing Tanuki 8x8B and GPT‑4o‑mini"
+          class="w-full object-cover" />
         <figcaption class="p-6 text-sm text-gray-700 leading-relaxed">
-          Tanuki 8×8B は学習済みモデルが公開されている LLM の中で最高性能を達成し，GPT‑4o‑mini を上回る結果を示した．サンプル数が少なく統計的有意差は確認できなかったものの，JMT‑Bench への回答能力だけでなく，多様で高性能な対話・作文性能を有することが確認された．
+          Tanuki 8×8B は学習済みモデルが公開されている LLM の中で最高性能を達成し，GPT‑4o‑mini を上回る結果を示した．サンプル数が少なく統計的有意差は確認できなかったものの，JMT‑Bench
+          への回答能力だけでなく，多様で高性能な対話・作文性能を有することが確認された．
         </figcaption>
       </figure>
     </div>
@@ -121,33 +135,38 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
 
       <!-- リーダー -->
       <p class="mt-6 text-base">
-      <span class="font-semibold">開発リーダー：</span>
-      <a href="https://weblab.t.u-tokyo.ac.jp/member/%E7%95%A0%E5%B1%B1%E3%80%80%E6%AD%93/" 
-         target="_blank" rel="noopener" 
-         class="text-indigo-600 hover:underline">
-         畠山 歓
-      </a>
-    </p>
+        <span class="font-semibold">開発リーダー：</span>
+        <a href="https://weblab.t.u-tokyo.ac.jp/member/%E7%95%A0%E5%B1%B1%E3%80%80%E6%AD%93/" target="_blank"
+          rel="noopener" class="text-indigo-600 hover:underline">
+          畠山 歓
+        </a>
+      </p>
       </p>
 
       <!-- 開発メンバー -->
       <h4 class="mt-4 font-semibold">開発メンバー（名前順、敬称略）</h4>
       <ul class="mt-3 flex flex-wrap gap-x-12 gap-y-2 text-sm leading-relaxed">
-        <li><a href="https://www.researchgate.net/profile/Tadashi-Asaoka-2/research" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">朝岡 忠</a></li>
+        <li><a href="https://www.researchgate.net/profile/Tadashi-Asaoka-2/research" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">朝岡 忠</a></li>
         <li>Atsushi&nbsp;Saito</li>
         <li>Chattsu‑GPT</li>
         <li>Chihiro&nbsp;Arata</li>
-        <li><a href="https://x.com/Aratako_LM" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">新田 千尋</a></li>
-        <li><a href="https://researchmap.jp/chihiro.higuchi" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">樋口 千洋</a></li>
+        <li><a href="https://x.com/Aratako_LM" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">新田
+            千尋</a></li>
+        <li><a href="https://researchmap.jp/chihiro.higuchi" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">樋口 千洋</a></li>
         <li>Daichi&nbsp;Kohmoto</li>
         <li>Esty</li>
         <li>Hideaki&nbsp;Hayashi</li>
         <li>hiroaki&nbsp;shioya</li>
         <li>Issei&nbsp;Fujimoto</li>
-        <li><a href="https://viajiefan.github.io/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">Jie Zeng</a></li>
+        <li><a href="https://viajiefan.github.io/" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">Jie Zeng</a></li>
         <li>白石 尽誠</li>
-        <li><a href="https://researchmap.jp/k-nishizawa0923" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">西澤 克彦</a></li>
-        <li><a href="https://www.linkedin.com/in/kn23454212/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">西前 和隆</a></li>
+        <li><a href="https://researchmap.jp/k-nishizawa0923" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">西澤 克彦</a></li>
+        <li><a href="https://www.linkedin.com/in/kn23454212/" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">西前 和隆</a></li>
         <li>渡邉 邦宏</li>
         <li>masaki&nbsp;okamura</li>
         <li>Minami&nbsp;Someya</li>
@@ -156,11 +175,14 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
         <li>Nishijima</li>
         <li>p1atdev</li>
         <li>Rumi&nbsp;Nakagawa</li>
-        <li><a href="https://research.cyberagent.ai/people/r-mitsuhashi/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">三橋 亮太</a></li>
-        <li><a href="https://susumuota.github.io/" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">太田 晋</a></li>
+        <li><a href="https://research.cyberagent.ai/people/r-mitsuhashi/" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">三橋 亮太</a></li>
+        <li><a href="https://susumuota.github.io/" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">太田 晋</a></li>
         <li>takagi</li>
         <li>Toshio&nbsp;Nishida</li>
-        <li><a href="https://huggingface.co/morizon" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">森永 雄一朗</a></li>
+        <li><a href="https://huggingface.co/morizon" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">森永 雄一朗</a></li>
         <li>Yuki&nbsp;Namiuchi</li>
         <li>Yukie&nbsp;Kawano</li>
         <li>永原恒冶</li>
@@ -176,7 +198,8 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
         <li>川村&nbsp;正春</li>
         <li>片上&nbsp;舞</li>
         <li>堀江更将</li>
-        <li><a href="https://orcid.org/0000-0003-0944-521X" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">堀江 吏将</a></li>	
+        <li><a href="https://orcid.org/0000-0003-0944-521X" target="_blank" rel="noopener"
+            class="text-indigo-600 hover:underline">堀江 吏将</a></li>
         <li>林寛太</li>
       </ul>
     </div>
@@ -199,11 +222,13 @@ Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8
   <footer class="bg-slate-900 text-gray-300 text-sm py-8">
     <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
       <span>&copy; Matsuo-Iwasawa Lab. All Rights Reserved.</span>
-      <a class="hover:text-white underline-offset-4" href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener">
+      <a class="hover:text-white underline-offset-4" href="https://github.com/matsuolab/tanuki" target="_blank"
+        rel="noopener">
         GitHub Repository
       </a>
     </div>
   </footer>
 
 </body>
+
 </html>
