@@ -78,9 +78,6 @@
           Blog(Zenn)
         </a>
 
-
-
-
         <a href="https://huggingface.co/weblab-GENIAC" target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face Logo"
@@ -106,15 +103,41 @@
     </div>
   </header>
 
+  <!-- ===== Visitor Counter ===== -->
+  <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
+    <div class="mt-4 p-2 bg-gray-100 rounded-lg inline-block">
+      <svg class="inline-block w-5 h-5 text-pink-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0z" />
+      </svg>
+      <span class="align-middle">訪問者数：</span>
+      <span id="visitor-count" class="font-bold align-middle">0</span>
+      <span class="align-middle">人</span>
+    </div>
+  </div>
+  <script>
+    (async () => {
+      const namespace = 'tanuki-llm';
+      const key = 'homepage';
+      const url = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+      try {
+        const res = await fetch(url);
+        const json = await res.json();
+        document.getElementById('visitor-count').innerText = json.value;
+      } catch (e) {
+        console.error('CountAPI error:', e);
+      }
+    })();
+  </script>
+
   <!-- ===== Summary ===== -->
   <section class="max-w-4xl mx-auto px-6 -mt-16">
     <div class="bg-white shadow-lg rounded-2xl p-8 ring-1 ring-slate-100">
       <h3 class="text-lg font-semibold">Summary</h3>
       <p class="mt-2 leading-relaxed">
-        <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。LLM、Tanuki-8B および
-        Tanuki-8x8B を開発し、Japanese MT-Bench (JMT-Bench) において、Tanuki 8Bは 10B級サイズのモデルを上回る性能を示し、Tanuki 8x8B
-        は国内でフルスクラッチから開発されたモデル
-        の中でトップレベルの性能を達成しました。（2024年8月末時点）
+        <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。LLM、Tanuki-8B および Tanuki-8x8B を開発し、
+        Japanese MT-Bench (JMT-Bench) において、Tanuki 8Bは 10B級サイズのモデルを上回る性能を示し、Tanuki 8x8B
+        は国内でフルスクラッチから開発されたモデルの中でトップレベルの性能を達成しました。（2024年8月末時点）
+        本プロジェクトページで学習コードや，使用方法の解説動画・記事を公開しています。
       </p>
     </div>
   </section>
@@ -125,29 +148,26 @@
 
       <h3 class="text-3xl font-bold">プロジェクトの概要(YouTube)</h3>
       <!-- <p class="mt-4 text-gray-600">プロジェクトの概要(YouTube)</p> -->
-
       <!-- 報告会のYoutube -->
       <div class="mt-10 aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe class="w-full h-full" src="https://www.youtube.com/embed/IcpXpX-r6ZY?si=9I3ho6jL3zE9zvud frameborder="
           allowfullscreen></iframe>
       </div>
 
-
-
       <!-- ポジティブ / ネガティブ例（任意）-->
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
           <h4 class="font-semibold mb-2">👍 改善点</h4>
           <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証した． </p>
-          <p class="mt-1">＊＊＊＊＊。</p>
+          <p class="mt-1"></p>
           <p> アップサイクリングを使用し，学習途中のTanuki 8BをベースにMoE形式のTanuki
             8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発である．</p>
-          <p class="mt-1">和＊＊＊＊＊。</p>
+          <p class="mt-1"></p>
         </div>
         <div class="p-6 bg-red-50 border border-red-200 rounded-xl">
           <h4 class="font-semibold mb-2">👎 制限事項</h4>
           <p>LLMの安全性に関しては確認が未検証/p>
-          <p class="mt-1">＊＊＊＊＊。</p>
+          <p class="mt-1"></p>
         </div>
       </div>
     </div>
@@ -172,32 +192,7 @@
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold">Tanukiの使い方説明（勉強会シリーズ）
       </h3>
-
-      <!-- 最大3列まで表示 -->
-      <!-- <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/Gwyyn9_WZao?si=pcGZ2aUfrwj6M6kz"
-            title="Video1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/-i9Db2yNnxQ?si=ghgbBprB6iKCbhEK"
-            title="Video 2" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/ezNx6tB8jac?si=ymw2RhQYfN4RNKAx"
-            title="Video 3" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/Wl76E8_3_6M?si=1CNHl1PX4Cjw9ekr"
-            title="Video 4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/dF6ye75lb6g?si=TTV5q6sKTaUk_Xqn"
-            title="Video 5" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div> -->
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
         <!-- カード1：第一回 環境の設定方法 -->
         <div class="bg-white rounded-xl shadow-md p-4">
           <h2 class="text-lg font-semibold mb-2">小型LlamaモデルのTransformerEngineを用いた事前学習の環境構築</h2>
@@ -218,7 +213,7 @@
           </p> -->
         </div>
 
-        <!-- カード2：別の回など（例） -->
+        <!-- カード2：Megatron-LMの概要と各種パラメータについて -->
         <div class="bg-white rounded-xl shadow-md p-4">
           <h2 class="text-lg font-semibold mb-2">Tanuki8Bに対してMT-Bench等を用いた性能評価<br><br></h2>
           <div class="aspect-video rounded-lg overflow-hidden mb-3">
@@ -237,9 +232,9 @@
             </a>
           </p> -->
         </div>
-        <!-- カード3：別の回など（例） -->
+        <!-- カード3：事前学習の方法 -->
         <div class="bg-white rounded-xl shadow-md p-4">
-          <h2 class="text-lg font-semibold mb-2">小型LlamaモデルのTRLライブラリを用いた事後学習<br><br></h2>
+          <h2 class="text-lg font-semibold mb-2">小型LlamaモデルのTRLライブラリを用いた事前学習<br><br></h2>
           <div class="aspect-video rounded-lg overflow-hidden mb-3">
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/ezNx6tB8jac?si=C44cLPvV8xeUQoqW"
               title="API使い方" frameborder="0" allowfullscreen></iframe>
@@ -256,7 +251,7 @@
             </a>
           </p> -->
         </div>
-        <!-- カード4：別の回など（例） -->
+        <!-- カード4：Tanuki8Bに対するMT-Benchを用いた評価 -->
         <div class="bg-white rounded-xl shadow-md p-4">
           <h2 class="text-lg font-semibold mb-2">Tanuki8Bに対してMT-Bench等を用いた性能評価</h2>
           <div class="aspect-video rounded-lg overflow-hidden mb-3">
@@ -275,7 +270,7 @@
             </a>
           </p> -->
         </div>
-        <!-- カード5：別の回など（例） -->
+        <!-- カード5：Persona-HubによるSFTデータ合成とLLM as a judgeによるDPOデータ合成 -->
         <div class="bg-white rounded-xl shadow-md p-4">
           <h2 class="text-lg font-semibold mb-2">Persona-HubによるSFTデータ合成とLLM as a judgeによるDPOデータ合成</h2>
           <div class="aspect-video rounded-lg overflow-hidden mb-3">
@@ -301,9 +296,7 @@
           </p> -->
         </div>
         <!-- 追加カードも同様にコピペで対応可 -->
-
       </div>
-
     </div>
   </section>
 
@@ -324,65 +317,58 @@
             </a>
           </p>
 
-          <!-- 開発メンバー -->
-          <h4 class="mt-8 font-semibold">開発メンバー（名前順、敬称略）</h4>
-          <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm leading-relaxed">
-            <li><a href="https://www.researchgate.net/profile/Tadashi-Asaoka-2/research" target="_blank"
-                rel="noopener noreferrer" class="text-indigo-600 hover:underline">朝岡 忠</a></li>
-            <li>Atsushi&nbsp;Saito</li>
-            <li>Chattsu‑GPT</li>
-            <li>Chihiro&nbsp;Arata</li>
-            <li><a href="https://x.com/Aratako_LM" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">新田 千尋</a></li>
-            <li><a href="https://researchmap.jp/chihiro.higuchi" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">樋口 千洋</a></li>
-            <li>Daichi&nbsp;Kohmoto</li>
-            <li>Esty</li>
-            <li>Hideaki&nbsp;Hayashi</li>
-            <li>hiroaki&nbsp;shioya</li>
-            <li>Issei&nbsp;Fujimoto</li>
-            <li><a href="https://viajiefan.github.io/" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">Jie Zeng</a></li>
-            <li>白石 尽誠</li>
-            <li><a href="https://researchmap.jp/k-nishizawa0923" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">西澤 克彦</a></li>
-            <li><a href="https://www.linkedin.com/in/kn23454212/" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">西前 和隆</a></li>
-            <li>渡邉 邦宏</li>
-            <li>masaki&nbsp;okamura</li>
-            <li>Minami&nbsp;Someya</li>
-            <li>Mさん</li>
-            <li>Nishi</li>
-            <li>Nishijima</li>
-            <li>p1atdev</li>
-            <li>Rumi&nbsp;Nakagawa</li>
-            <li><a href="https://research.cyberagent.ai/people/r-mitsuhashi/" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">三橋 亮太</a></li>
-            <li><a href="https://susumuota.github.io/" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">太田 晋</a></li>
-            <li>takagi</li>
-            <li>Toshio&nbsp;Nishida</li>
-            <li><a href="https://huggingface.co/morizon" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">森永 雄一朗</a></li>
-            <li>Yuki&nbsp;Namiuchi</li>
-            <li>Yukie&nbsp;Kawano</li>
-            <li>永原恒冶</li>
-            <li>加藤純</li>
-            <li>河越&nbsp;淳</li>
-            <li>岩田&nbsp;兼太朗</li>
-            <li>菊池満帆</li>
-            <li>熊田匡仁</li>
-            <li>江國翔太</li>
-            <li>佐野敏幸</li>
-            <li>山口&nbsp;裕輝</li>
-            <li>西井康隆</li>
-            <li>川村&nbsp;正春</li>
-            <li>片上&nbsp;舞</li>
-            <li>堀江更将</li>
-            <li><a href="https://orcid.org/0000-0003-0944-521X" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-600 hover:underline">堀江 吏将</a></li>
-            <li>林寛太</li>
-          </ul>
+        <!-- 開発メンバー -->
+        <h4 class="mt-8 font-semibold">開発メンバー（名前順、敬称略）</h4>
+        <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm leading-relaxed">
+
+          <!-- 英字 A→Z -->
+          <li>Atsushi&nbsp;Saito</li>
+          <li>Chattsu-GPT</li>
+          <li>Chihiro&nbsp;Arata</li>
+          <li>Daichi&nbsp;Kohmoto</li>
+          <li>Esty</li>
+          <li>Hideaki&nbsp;Hayashi</li>
+          <li>hiroaki&nbsp;shioya</li>
+          <li>Issei&nbsp;Fujimoto</li>
+          <li><a href="https://viajiefan.github.io/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Jie&nbsp;Zeng</a></li>
+          <li>masaki&nbsp;okamura</li>
+          <li>Minami&nbsp;Someya</li>
+          <li>Mさん</li>
+          <li>Nishi</li>
+          <li>Nishijima</li>
+          <li>p1atdev</li>
+          <li>Rumi&nbsp;Nakagawa</li>
+          <li>takagi</li>
+          <li>Toshio&nbsp;Nishida</li>
+          <li>Yuki&nbsp;Namiuchi</li>
+          <li>Yukie&nbsp;Kawano</li>
+
+          <!-- 日本語 あいうえお順 -->
+          <li><a href="https://www.researchgate.net/profile/Tadashi-Asaoka-2/research" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">朝岡 忠</a></li>
+          <li><a href="https://x.com/Aratako_LM" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">新田 千尋</a></li>          
+          <li>岩田&nbsp;兼太朗</li>
+          <li>江國 翔太</li>
+          <li><a href="https://susumuota.github.io/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">太田 晋</a></li>
+          <li>片上&nbsp;舞</li>
+          <li>加藤 純</li>
+          <li>河越&nbsp;淳</li>
+          <li>川村&nbsp;正春</li>          
+          <li>菊池 満帆</li>
+          <li>熊田 匡仁</li>
+          <li>佐野敏幸</li>
+          <li>白石&nbsp;尽誠</li>
+          <li>永原 恒冶</li>
+          <li>西井 康隆</li>
+          <li><a href="https://www.linkedin.com/in/kn23454212/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">西前 和隆</a></li>
+          <li><a href="https://researchmap.jp/k-nishizawa0923" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">西澤 克彦</a></li>
+          <li>林 寛太</li>
+          <li><a href="https://researchmap.jp/chihiro.higuchi" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">樋口 千洋</a></li>
+          <li><a href="https://orcid.org/0000-0003-0944-521X" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">堀江 吏将</a></li>
+          <li><a href="https://research.cyberagent.ai/people/r-mitsuhashi/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">三橋 亮太</a></li>
+          <li><a href="https://huggingface.co/morizon" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">森永 雄一朗</a></li>
+          <li>渡邉&nbsp;邦宏</li>
+          <li>山口&nbsp;裕輝</li>
+        </ul>
           <!-- 運営 -->
           <p class="mt-8 text-base">
             <span class="font-semibold">プロジェクト運営：</span>
