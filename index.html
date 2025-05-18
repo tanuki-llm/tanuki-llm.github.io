@@ -158,15 +158,19 @@
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
           <h4 class="font-semibold mb-2">👍 改善点</h4>
-          <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証した． </p>
+          <p> 合成データを継続事前学習・事後学習に用いることにより，LLMの対話能力が向上することを実証しました。 </p>
           <p class="mt-1"></p>
           <p> アップサイクリングを使用し，学習途中のTanuki 8BをベースにMoE形式のTanuki
-            8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発である．</p>
+            8x8Bを構築することで，損失の発散による学習失敗リスクと計算コストを抑えた学習を実現した．国内において，初めてのアップサイクリングに成功したLLM開発であります。</p>
           <p class="mt-1"></p>
         </div>
         <div class="p-6 bg-red-50 border border-red-200 rounded-xl">
           <h4 class="font-semibold mb-2">👎 制限事項</h4>
-          <p>LLMの安全性に関しては確認が未検証/p>
+          <p>LLMの安全性に関しては確認が未検証となります。</p>
+          <p class="mt-1"></p>
+          <p>日本語と英語に特化したモデルのためその他の言語非対応となります。</p>
+          <p class="mt-1"></p>
+          <p>汎用性モデルのためドメイン特化したモデルではありません。</p>
           <p class="mt-1"></p>
         </div>
       </div>
@@ -206,6 +210,12 @@
               事前学習環境構築 ～シェルスクリプトによる再現性の担保
             </a>
           </p>
+          <p class="text-sm mb-1">
+            📘 <a href="https://zenn.dev/matsuolab/articles/9f05f2be70cff8" class="text-blue-600 underline"
+              target="_blank">
+              事前学習の方法
+            </a>
+          </p>
           <!-- <p class="text-sm">
             🔗 <a href="https://example.com/other-resource" class="text-blue-600 underline" target="_blank">
               関連リソース（例：GitHubリポジトリ）
@@ -215,7 +225,7 @@
 
         <!-- カード2：Megatron-LMの概要と各種パラメータについて -->
         <div class="bg-white rounded-xl shadow-md p-4">
-          <h2 class="text-lg font-semibold mb-2">Tanuki8Bに対してMT-Bench等を用いた性能評価<br><br></h2>
+          <h2 class="text-lg font-semibold mb-2">小型LlamaモデルのMegatron-LMを用いた事前学習と継続事前学習<br><br></h2>
           <div class="aspect-video rounded-lg overflow-hidden mb-3">
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/Wl76E8_3_6M?si=iV7srUnMEab_BIWk"
               title="API使い方" frameborder="0" allowfullscreen></iframe>
@@ -240,9 +250,15 @@
               title="API使い方" frameborder="0" allowfullscreen></iframe>
           </div>
           <p class="text-sm mb-1">
-            📘 <a href="https://zenn.dev/matsuolab/articles/9f05f2be70cff8" class="text-blue-600 underline"
+            📘 <a href="https://zenn.dev/matsuolab/articles/96d3c0118d3ca6" class="text-blue-600 underline"
               target="_blank">
-              事前学習の方法
+              Tanuki-8B, 8x8B - Supervised Fine-Tuning (SFT) 実行(11/24日勉強会公開用)
+            </a>
+          </p>
+          <p class="text-sm mb-1">
+            📘 <a href="https://zenn.dev/matsuolab/articles/62d99af24ff89a" class="text-blue-600 underline"
+              target="_blank">
+              Tanuki-8B, 8x8B - Direct Preference Optimization (DPO)実行(11/24日勉強会公開用)
             </a>
           </p>
           <!-- <p class="text-sm">
@@ -277,18 +293,6 @@
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/Gwyyn9_WZao?si=NcxmnPhKl_b-HZIX"
               title="API使い方" frameborder="0" allowfullscreen></iframe>
           </div>
-          <p class="text-sm mb-1">
-            📘 <a href="https://zenn.dev/matsuolab/articles/96d3c0118d3ca6" class="text-blue-600 underline"
-              target="_blank">
-              Tanuki-8B, 8x8B - Supervised Fine-Tuning (SFT) 実行(11/24日勉強会公開用)
-            </a>
-          </p>
-          <p class="text-sm mb-1">
-            📘 <a href="https://zenn.dev/matsuolab/articles/62d99af24ff89a" class="text-blue-600 underline"
-              target="_blank">
-              Tanuki-8B, 8x8B - Direct Preference Optimization (DPO)実行(11/24日勉強会公開用)
-            </a>
-          </p>
           <!-- <p class="text-sm">
             🔗 <a href="https://github.com/your-org/api-demo" class="text-blue-600 underline" target="_blank">
               GitHubサンプルコード
