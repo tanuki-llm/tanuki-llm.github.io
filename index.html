@@ -102,7 +102,7 @@
   <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
     <div class="mt-4 p-2 bg-gray-100 rounded-lg inline-block">
       <svg class="inline-block w-5 h-5 text-pink-500 mr-1" fill="currentColor" viewBox="0 0 20 20"
-           aria-hidden="true">
+          aria-hidden="true">
         <circle cx="10" cy="10" r="10" />
       </svg>
       <span class="align-middle">訪問者数：</span>
@@ -113,13 +113,17 @@
 
   <script>
     (async () => {
-      // ページごとにユニークな URL をキーにする
-      const url = encodeURIComponent(window.location.href);
-      const res = await fetch(
-        `https://hits.seeyoufarm.com/api/count/incr?url=${url}&amount=1`
-      );
-      if (!res.ok) throw new Error(`Hits API status ${res.status}`);
+      // 現在のページ URL をキーにして一意化
+      const pageUrl = encodeURIComponent(window.location.href);
+      // Hits Counter の JSON API エンドポイント
+      const apiUrl  = `https://hitscounter.dev/api/count/incr?url=${pageUrl}&amount=1`;
+
+      // カウントをインクリメントして最新値を取得
+      const res = await fetch(apiUrl);
+      if (!res.ok) throw new Error(`Hits Counter error: ${res.status}`);
       const { value } = await res.json();
+
+      // 画面に反映
       document.getElementById('visitor-count').innerText = value;
     })().catch((e) => {
       console.error('Visitor counter error:', e);
