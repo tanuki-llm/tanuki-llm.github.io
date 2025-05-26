@@ -106,25 +106,26 @@
         <circle cx="10" cy="10" r="10" />
       </svg>
       <span class="align-middle">訪問者数：</span>
-      <span id="visitor-count" class="font-bold align-middle">0</span>
+      <span id="visitor-count" class="font-bold align-middle">–</span>
       <span class="align-middle">人</span>
     </div>
   </div>
-  <div id="visitor-count">–</div>
-    <script>
-      (async () => {
-        // ページごとにユニークな URL を送るのが推奨
-        const url = encodeURIComponent(window.location.href);
-        const res = await fetch(
-          `https://hits.seeyoufarm.com/api/count/incr?url=${url}&amount=1`
-        );
-        const { value } = await res.json();
-        document.getElementById('visitor-count').innerText = value;
-      })().catch(() => {
-        document.getElementById('visitor-count').innerText = '–';
-      });
-    </script>
-  </div>
+
+  <script>
+    (async () => {
+      // ページごとにユニークな URL をキーにする
+      const url = encodeURIComponent(window.location.href);
+      const res = await fetch(
+        `https://hits.seeyoufarm.com/api/count/incr?url=${url}&amount=1`
+      );
+      if (!res.ok) throw new Error(`Hits API status ${res.status}`);
+      const { value } = await res.json();
+      document.getElementById('visitor-count').innerText = value;
+    })().catch((e) => {
+      console.error('Visitor counter error:', e);
+      document.getElementById('visitor-count').innerText = '–';
+    });
+  </script>
 
   <!-- ===== Summary ===== -->
   <section class="max-w-4xl mx-auto px-6 -mt-16">
