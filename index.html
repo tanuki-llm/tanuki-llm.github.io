@@ -97,33 +97,11 @@
 
   <!-- ===== Visitor Counter ===== -->
   <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
-    <div class="mt-4 p-2 bg-gray-100 rounded-lg inline-block">
-      <svg class="inline-block w-5 h-5 text-pink-500 mr-1"
-           fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-        <circle cx="10" cy="10" r="10" />
-      </svg>
-      <span class="align-middle">訪問者数：</span>
-      <span id="visitor-count" class="font-bold align-middle">–</span>
-      <span class="align-middle">人</span>
+    <div class="mt-4">
+      <img src="https://komarev.com/ghpvc/?username=tanuki-llm&style=flat-square&color=brightgreen" 
+          alt="訪問者数" class="inline-block">
     </div>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('https://api.countapi.xyz/hit/tanuki-llm-github-io/homepage')
-        .then(res => {
-          if (!res.ok) throw new Error(res.status);
-          return res.json();
-        })
-        .then(data => {
-          document.getElementById('visitor-count').innerText = data.value;
-        })
-        .catch(e => {
-          console.error(e);
-          document.getElementById('visitor-count').innerText = '–';
-        });
-    });
-  </script>
 
   <!-- ===== Summary ===== -->
   <section class="max-w-4xl mx-auto px-6 -mt-16">
