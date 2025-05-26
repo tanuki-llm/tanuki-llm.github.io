@@ -21,7 +21,6 @@
     body {
       font-family: 'Inter', sans-serif;
     }
-
     /* hero 背景グラデーション */
     .hero-bg {
       background:
@@ -46,25 +45,25 @@
         －公募・公開型による LLM 開発プロジェクト “Tanuki” の報告－
       </h2>
       <h2 class="mt-4 text-xl sm:text-2xl font-semibold">
-        GENIAC Phase&nbsp;2 開発メンバー
+        GENIAC Phase 2 開発メンバー
       </h2>
 
       <!-- ボタン群 -->
       <nav class="flex flex-wrap justify-center gap-3 mt-10">
         <a href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
-          Code&nbsp;(Tanuki公開用版)
+          Code (Tanuki公開用版)
         </a>
         <a href="https://github.com/matsuolab/nedo_project_code" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
-          Code&nbsp;(GENIAC:開発中オリジナル版)
+          Code (GENIAC:開発中オリジナル版)
         </a>
         <a href="http://tanuki-llm.github.io/3G1-GS-6-04.pdf" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                aria-hidden="true">
@@ -73,26 +72,24 @@
           Paper
         </a>
         <a href="https://zenn.dev/p/matsuolab" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="./logo-only.svg" alt="Tanuki Logo" class="h-5 w-5 object-cover" aria-hidden="true" />
-          Tech Blog&nbsp;(Zenn)
+          Tech Blog (Zenn)
         </a>
         <a href="https://huggingface.co/weblab-GENIAC" target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
                alt="Hugging Face Logo" class="h-5 w-5" aria-hidden="true" />
           HuggingFace
         </a>
-        <a href="https://github.com/tanuki-llm/tanuki-llm.github.io/issues" target="_blank"
-           rel="noopener noreferrer"
+        <a href="https://github.com/tanuki-llm/tanuki-llm.github.io/issues" target="_blank" rel="noopener noreferrer"
            class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
           お問合せ
         </a>
-        <span
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-400 text-white cursor-not-allowed opacity-70">
-          Demo&nbsp;(準備中)
+        <span class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-400 text-white cursor-not-allowed opacity-70">
+          Demo (準備中)
         </span>
       </nav>
     </div>
@@ -102,7 +99,7 @@
   <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
     <div class="mt-4 p-2 bg-gray-100 rounded-lg inline-block">
       <svg class="inline-block w-5 h-5 text-pink-500 mr-1" fill="currentColor" viewBox="0 0 20 20"
-          aria-hidden="true">
+           aria-hidden="true">
         <circle cx="10" cy="10" r="10" />
       </svg>
       <span class="align-middle">訪問者数：</span>
@@ -113,17 +110,11 @@
 
   <script>
     (async () => {
-      // 現在のページ URL をキーにして一意化
       const pageUrl = encodeURIComponent(window.location.href);
-      // Hits Counter の JSON API エンドポイント
       const apiUrl  = `https://hitscounter.dev/api/count/incr?url=${pageUrl}&amount=1`;
-
-      // カウントをインクリメントして最新値を取得
-      const res = await fetch(apiUrl);
+      const res     = await fetch(apiUrl);
       if (!res.ok) throw new Error(`Hits Counter error: ${res.status}`);
       const { value } = await res.json();
-
-      // 画面に反映
       document.getElementById('visitor-count').innerText = value;
     })().catch((e) => {
       console.error('Visitor counter error:', e);
@@ -149,15 +140,11 @@
   <section class="mt-24 mb-32">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold">プロジェクトの概要 (YouTube)</h3>
-
-      <!-- 報告会の YouTube -->
       <div class="mt-10 aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe class="w-full h-full"
                 src="https://www.youtube.com/embed/IcpXpX-r6ZY?si=9I3ho6jL3zE9zvud"
                 style="border:0;" allowfullscreen></iframe>
       </div>
-
-      <!-- ポジティブ / ネガティブ例 -->
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
           <h4 class="font-semibold mb-2">👍 改善点</h4>
@@ -292,7 +279,6 @@
                     title="データ合成動画" style="border:0;" allowfullscreen></iframe>
           </div>
         </div>
-
       </div>
     </div>
   </section>
