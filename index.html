@@ -113,17 +113,24 @@
   <script>
     (async () => {
       const namespace = 'tanuki-llm';
-      const key = 'homepage';
-      const url = `https://api.countapi.xyz/hit/${namespace}/${key}`;
-      try {
-        const res = await fetch(url);
-        const json = await res.json();
-        document.getElementById('visitor-count').innerText = json.value;
-      } catch (e) {
-        console.error('CountAPI error:', e);
-        document.getElementById('visitor-count').innerText = '-';
-      }
-    })();
+      const key       = 'homepage';
+
+      // ① キーがなければ作成（存在していても上書きはされません）
+      await fetch(
+        `https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`
+      );
+
+      // ② カウントを 1 増やす
+      const res = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+      if (!res.ok) throw new Error(`CountAPI status ${res.status}`);
+      const data = await res.json();
+
+      // ③ 画面に表示
+      document.getElementById('visitor-count').innerText = data.value;
+    })().catch(e => {
+      console.error('CountAPI error:', e);
+      document.getElementById('visitor-count').innerText = '-';
+    });
   </script>
 
   <!-- ===== Summary ===== -->
