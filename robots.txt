@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Sitemap: https://tanuki-llm.github.io/sitemap.xml
+
+# GitHubのクローラー許可
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# GitHub Pages特有の除外設定
+Disallow: /.git/
+Disallow: /node_modules/
