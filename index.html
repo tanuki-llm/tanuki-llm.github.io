@@ -3,22 +3,86 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Google Search Console確認用メタタグを<head>内に追加 -->
-  <meta name="google-site-verification" content="Pkgzn783UBlEXqeTwxG96aeS8qqAr9xX9W0FIQu5hI4" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- ================= SEO / Metadata ================= -->
-  <title>日本語での対話・作文性能に力点を置いた大規模言語モデルの開発 | Tanuki Project</title>
-  <meta name="description"
-        content="Tanuki は日本語特化の大規模言語モデル (LLM) を公募・公開型で開発するプロジェクトです。Tanuki-8B / Tanuki-8×8B の学習コード・論文・解説記事を公開し、MT-Bench で国内最高クラスの性能を達成しました。" />
+  <!-- ================= Google Search Console 確認用メタタグ ================= -->
+  <!-- 注意: 実際の確認コードに置き換えてください -->
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+
+  <!-- ================= SEO最適化 / Metadata ================= -->
+  <title>Tanuki LLM - 日本語特化大規模言語モデル | Tanuki-8B・Tanuki-8×8B</title>
+  <meta name="description" content="Tanuki LLM（タヌキ）は日本語に特化した大規模言語モデル（Large Language Model）です。Tanuki-8B、Tanuki-8×8Bモデルを開発し、Japanese MT-Benchで国内最高レベルの性能を達成。オープンソースで学習コード・論文を公開中。" />
+  
+  <!-- SEO重要キーワード -->
+  <meta name="keywords" content="Tanuki LLM, タヌキ LLM, Tanuki-8B, Tanuki-8×8B, 大規模言語モデル, Large Language Model, 日本語LLM, Japanese LLM, オープンソース, GENIAC, 機械学習, AI, 人工知能, 自然言語処理, NLP, MoE, Transformer" />
+  
+  <!-- Open Graph（SNS共有時の表示） -->
+  <meta property="og:title" content="Tanuki LLM - 日本語特化大規模言語モデル" />
+  <meta property="og:description" content="日本語に特化したオープンソース大規模言語モデル。Tanuki-8B・Tanuki-8×8Bで国内最高レベルの性能を実現。" />
+  <meta property="og:url" content="https://tanuki-llm.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tanuki LLM Project" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:image" content="https://tanuki-llm.github.io/tanuki-ogp.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tanuki LLM - 日本語特化大規模言語モデル" />
+  <meta name="twitter:description" content="日本語に特化したオープンソース大規模言語モデル。Tanuki-8B・Tanuki-8×8Bで国内最高レベルの性能を実現。" />
+  <meta name="twitter:image" content="https://tanuki-llm.github.io/tanuki-ogp.png" />
+  
+  <!-- 検索エンジン向け構造化データ（JSON-LD） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tanuki LLM",
+    "applicationCategory": "DeveloperApplication",
+    "description": "日本語に特化した大規模言語モデル（Large Language Model）。Tanuki-8B、Tanuki-8×8Bモデルを提供。",
+    "operatingSystem": "Cross-platform",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "GENIAC Project",
+      "url": "https://tanuki-llm.github.io/"
+    },
+    "keywords": "LLM, 大規模言語モデル, 日本語, Tanuki, AI, 機械学習, オープンソース",
+    "url": "https://tanuki-llm.github.io/",
+    "sameAs": [
+      "https://github.com/matsuolab/tanuki",
+      "https://huggingface.co/weblab-GENIAC",
+      "https://zenn.dev/p/matsuolab"
+    ],
+    "author": [
+      {
+        "@type": "Person",
+        "name": "畠山 歓",
+        "url": "https://weblab.t.u-tokyo.ac.jp/member/%E7%95%A0%E5%B1%B1%E3%80%80%E6%AD%93/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tanuki-llm.github.io/" />
 
   <!-- ================= Styles / Fonts ================= -->
-  <!-- Tailwind CSS (v3 CDN) — 本番ではビルド版に置換推奨 -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts -->
+  
+  <!-- Google Fonts with preload optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//github.com">
+  <link rel="dns-prefetch" href="//huggingface.co">
+  <link rel="dns-prefetch" href="//zenn.dev">
+  
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -31,66 +95,81 @@
           rgba(236, 72, 153, .15) 60%,
           rgba(255, 255, 255, 0));
     }
+    /* スムーズスクロール */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- ===== Hero ===== -->
-  <header class="hero-bg pt-20 pb-28">
+  <!-- ===== Hero（SEO強化版） ===== -->
+  <header class="hero-bg pt-20 pb-28" role="banner">
     <div class="max-w-5xl mx-auto px-6 text-center">
+      <!-- メインタイトル（H1）にキーワード最適化 -->
       <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-        日本語での対話・作文性能に力点を置いた<br class="hidden sm:inline" />
-        大規模言語モデルの開発
+        <span class="text-indigo-600">Tanuki LLM</span> - 日本語特化<br class="hidden sm:inline" />
+        大規模言語モデル（Large Language Model）
       </h1>
-      <h2 class="mt-4 text-xl sm:text-2xl font-semibold text-indigo-600">
-        －公募・公開型による LLM 開発プロジェクト “Tanuki” の報告－
+      
+      <!-- サブタイトル（H2）で詳細キーワード -->
+      <h2 class="mt-4 text-xl sm:text-2xl font-semibold text-gray-700">
+        Tanuki-8B・Tanuki-8×8B | オープンソース日本語LLM開発プロジェクト
       </h2>
-      <h2 class="mt-4 text-xl sm:text-2xl font-semibold">
-        GENIAC Phase 2 開発メンバー
-      </h2>
+      
+      <h3 class="mt-4 text-lg sm:text-xl font-medium text-gray-600">
+        GENIAC Phase 2 開発 | 公募・公開型コミュニティによる研究開発
+      </h3>
 
       <!-- ボタン群 -->
-      <nav class="flex flex-wrap justify-center gap-3 mt-10">
+      <nav class="flex flex-wrap justify-center gap-3 mt-10" role="navigation" aria-label="プロジェクトリンク">
         <a href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="Tanuki LLM GitHubリポジトリ（公開用版）">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-               alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
+               alt="GitHub Logo" class="h-5 w-5" width="20" height="20" />
           Code (Tanuki公開用版)
         </a>
         <a href="https://github.com/matsuolab/nedo_project_code" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="GENIAC開発コードリポジトリ（オリジナル版）">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-               alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
+               alt="GitHub Logo" class="h-5 w-5" width="20" height="20" />
           Code (GENIAC:開発中オリジナル版)
         </a>
         <a href="http://tanuki-llm.github.io/3G1-GS-6-04.pdf" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="Tanuki LLM研究論文PDF">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                aria-hidden="true">
             <path d="M7 7V3h10v4M7 7h10M7 7v14h10V7M7 17h10M7 13h10" />
           </svg>
-          Paper
+          Paper (研究論文)
         </a>
         <a href="https://zenn.dev/p/matsuolab" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
-          <img src="./logo-only.svg" alt="Tanuki Logo" class="h-5 w-5 object-cover" aria-hidden="true" />
-          Tech Blog (Zenn)
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="Tanuki LLM技術ブログ・解説記事">
+          <img src="./logo-only.svg" alt="Tanuki Logo" class="h-5 w-5 object-cover" width="20" height="20" />
+          Tech Blog (技術解説)
         </a>
         <a href="https://huggingface.co/weblab-GENIAC" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="Tanuki LLM HuggingFaceモデルページ">
           <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
-               alt="Hugging Face Logo" class="h-5 w-5" aria-hidden="true" />
-          HuggingFace
+               alt="Hugging Face Logo" class="h-5 w-5" width="20" height="20" />
+          HuggingFace (モデルDL)
         </a>
         <a href="https://github.com/tanuki-llm/tanuki-llm.github.io/issues" target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700">
+           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+           aria-label="お問い合わせ・バグ報告">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-               alt="GitHub Logo" class="h-5 w-5" aria-hidden="true" />
+               alt="GitHub Logo" class="h-5 w-5" width="20" height="20" />
           お問合せ
         </a>
-        <span class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-400 text-white cursor-not-allowed opacity-70">
+        <span class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-400 text-white cursor-not-allowed opacity-70"
+              aria-label="デモ準備中">
           Demo (準備中)
         </span>
       </nav>
@@ -99,44 +178,111 @@
 
   <!-- ===== Visitor Counter ===== -->
   <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
-    <div class="mt-4">
-      <img src="https://komarev.com/ghpvc/?username=tanuki-llm&style=flat-square&color=brightgreen" 
-          alt="訪問者数" class="inline-block">
+    <div class="mt-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg inline-block">
+      <div class="flex items-center gap-2 justify-center">
+        <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <img src="https://komarev.com/ghpvc/?username=tanuki-llm&style=flat-square&color=brightgreen" 
+             alt="Tanuki LLM訪問者数" class="inline-block" width="auto" height="20">
+      </div>
+      <p class="text-xs text-gray-500 mt-1">ページ訪問者数</p>
     </div>
   </div>
 
-  <!-- ===== Summary ===== -->
-  <section class="max-w-4xl mx-auto px-6 -mt-16">
+  <!-- ===== Quick Stats ===== -->
+  <div class="max-w-5xl mx-auto px-6 mt-4 text-center">
+    <div class="flex flex-wrap justify-center gap-2">
+      <img src="https://img.shields.io/github/stars/matsuolab/tanuki?style=social" alt="GitHub Stars" loading="lazy">
+      <img src="https://img.shields.io/github/forks/matsuolab/tanuki?style=social" alt="GitHub Forks" loading="lazy">
+      <img src="https://img.shields.io/github/last-commit/tanuki-llm/tanuki-llm.github.io?style=flat-square&color=blue" alt="Last Commit" loading="lazy">
+      <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ===== Summary（SEO強化版） ===== -->
+  <section class="max-w-4xl mx-auto px-6 -mt-12" role="main">
     <div class="bg-white shadow-lg rounded-2xl p-8 ring-1 ring-slate-100">
-      <h3 class="text-lg font-semibold">Summary</h3>
-      <p class="mt-2 leading-relaxed">
-        <strong>Tanuki</strong> は、公募型の貢献者コミュニティによって開発された日本語特化の LLM です。
-        Tanuki-8B および Tanuki-8×8B を開発し、
-        Japanese MT-Bench (JMT-Bench) において、Tanuki-8B は 10B 級モデルを上回る性能を示し、
-        Tanuki-8×8B は国内でフルスクラッチ開発されたモデルとしてトップレベルの性能を達成しました（2024 年 8 月末時点）。
-        本ページで学習コードや使用方法の解説動画・記事を公開しています。
+      <h2 class="text-2xl font-bold mb-4">Tanuki LLM とは</h2>
+      <p class="leading-relaxed">
+        <strong>Tanuki LLM（タヌキ大規模言語モデル）</strong>は、公募型の貢献者コミュニティによって開発された<strong>日本語特化の大規模言語モデル（Large Language Model）</strong>です。
+        <strong>Tanuki-8B</strong>および<strong>Tanuki-8×8B</strong>の2つのモデルを開発し、
+        <strong>Japanese MT-Bench (JMT-Bench)</strong>において、Tanuki-8Bは10B級モデルを上回る性能を示し、
+        Tanuki-8×8Bは国内でフルスクラッチ開発されたモデルとしてトップレベルの性能を達成しました（2024年8月末時点）。
       </p>
+      <p class="mt-4 leading-relaxed">
+        本プロジェクトでは、<strong>オープンソース</strong>として学習コードや使用方法の解説動画・記事を公開し、
+        日本語での対話・作文性能に特化したLLMの研究開発を推進しています。
+      </p>
+      
+      <!-- キーワード強化セクション -->
+      <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400">
+        <h3 class="font-semibold text-blue-800 mb-2">主要技術・特徴</h3>
+        <ul class="text-sm text-blue-700 space-y-1">
+          <li>• <strong>日本語特化LLM</strong>：日本語での高い対話・文章生成能力</li>
+          <li>• <strong>MoE（Mixture of Experts）アーキテクチャ</strong>：Tanuki-8×8Bで採用</li>
+          <li>• <strong>継続事前学習</strong>：合成データを用いた効率的な学習手法</li>
+          <li>• <strong>アップサイクリング</strong>：国内初の成功事例</li>
+          <li>• <strong>オープンソース</strong>：GitHub、HuggingFaceで公開</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== モデル詳細セクション（SEO用） ===== -->
+  <section class="mt-16 mb-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Tanuki LLMモデル一覧</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="bg-white p-6 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-3">Tanuki-8B</h3>
+          <p class="text-gray-700 leading-relaxed">
+            <strong>8億パラメータ</strong>のベースモデル。コンパクトながら高性能な日本語LLMとして、
+            10B級モデルを上回る対話性能を実現。推論速度と性能のバランスに優れた実用的なモデルです。
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">8Bパラメータ</span>
+            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">高速推論</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">日本語特化</span>
+          </div>
+        </article>
+        
+        <article class="bg-white p-6 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold text-indigo-600 mb-3">Tanuki-8×8B</h3>
+          <p class="text-gray-700 leading-relaxed">
+            <strong>MoE（Mixture of Experts）</strong>アーキテクチャを採用した高性能モデル。
+            アップサイクリング手法により効率的に開発され、国内最高レベルの日本語LLM性能を達成しています。
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">MoEアーキテクチャ</span>
+            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">最高性能</span>
+            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded">国内トップクラス</span>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- ===== Demo Section ===== -->
   <section class="mt-24 mb-32">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold">プロジェクトの概要 (YouTube)</h3>
+      <h2 class="text-3xl font-bold">Tanuki LLMプロジェクト概要動画</h2>
       <div class="mt-10 aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe class="w-full h-full"
                 src="https://www.youtube.com/embed/IcpXpX-r6ZY?si=9I3ho6jL3zE9zvud"
-                style="border:0;" allowfullscreen></iframe>
+                title="Tanuki LLM プロジェクト概要 - 日本語特化大規模言語モデル"
+                style="border:0;" allowfullscreen loading="lazy"></iframe>
       </div>
+      
       <div class="grid sm:grid-cols-2 gap-6 mt-14 text-left">
         <div class="p-6 bg-green-50 border border-green-200 rounded-xl">
-          <h4 class="font-semibold mb-2">👍 改善点</h4>
+          <h3 class="font-semibold mb-2">👍 改善点・成果</h3>
           <p>合成データを継続事前学習・事後学習に用いることで、LLM の対話能力が向上することを実証しました。</p>
           <p class="mt-1">アップサイクリングにより、学習途中の Tanuki-8B をベースに MoE 形式の Tanuki-8×8B を構築し、
             計算コストと学習失敗リスクを低減しました。国内初のアップサイクリング成功例です。</p>
         </div>
         <div class="p-6 bg-red-50 border border-red-200 rounded-xl">
-          <h4 class="font-semibold mb-2">👎 制限事項</h4>
+          <h3 class="font-semibold mb-2">👎 制限事項・今後の課題</h3>
           <p>安全性評価は今後の課題です。</p>
           <p class="mt-1">アブレーション研究により要因別の精度寄与を明らかにする必要があります。</p>
           <p class="mt-1">日本語・英語特化のため、他言語対応は限定的です。</p>
@@ -148,12 +294,12 @@
   <!-- ===== Result ===== -->
   <section class="mb-32">
     <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center">Result</h3>
+      <h2 class="text-3xl font-bold text-center">評価結果・ベンチマーク</h2>
       <figure class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <img src="Result_1.png" alt="Tanuki-8×8B と GPT-4o-mini の評価比較グラフ"
-             class="w-2/3 mx-auto object-cover" />
+        <img src="Result_1.png" alt="Tanuki-8×8B と GPT-4o-mini の評価比較グラフ - Japanese MT-Benchでの性能比較"
+             class="w-2/3 mx-auto object-cover" loading="lazy" />
         <figcaption class="p-6 text-sm text-gray-700 leading-relaxed">
-          Tanuki 8×8B は公開済み LLM の中で最高性能を達成し、GPT-4o-mini を上回る結果を示した。
+          <strong>Tanuki-8×8B は公開済み日本語LLMの中で最高性能を達成</strong>し、GPT-4o-mini を上回る結果を示した。
           サンプル数が少ないため統計的有意差は確認できなかったものの、
           多様で高性能な対話・作文能力を有することが示唆された。
         </figcaption>
@@ -266,23 +412,20 @@
     </div>
   </section>
 
-  <!-- ===== Members ===== -->
-  <section class="mb-32">
+
+  <!-- ===== Team ===== -->
+  <section class="mt-24 mb-32">
     <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center">Members</h3>
-
-      <div class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <div class="p-6">
-
-          <!-- Leader -->
-          <p class="text-base">
-            <span class="font-semibold">開発リーダー：</span>
-            <a href="https://weblab.t.u-tokyo.ac.jp/member/%E7%95%A0%E5%B1%B1%E3%80%80%E6%AD%93/"
-               target="_blank" rel="noopener noreferrer"
-               class="text-indigo-600 hover:underline">畠山 歓</a>
+      <h2 class="text-3xl font-bold text-center mb-8">開発チーム</h2>
+      <div class="bg-white shadow-lg rounded-2xl p-8 ring-1 ring-slate-100">
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">開発リーダー</h3>
+          <p class="text-gray-700">
+            <strong><a href="https://weblab.t.u-tokyo.ac.jp/member/%E7%95%A0%E5%B1%B1%E3%80%80%E6%AD%93/" 
+                      target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">畠山 歓</a></strong>
           </p>
-
-          <!-- Members -->
+          
+          <!-- 開発メンバー -->
           <h4 class="mt-8 font-semibold">開発メンバー（名前順，敬称略）</h4>
           <ul class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm leading-relaxed">
             <!-- 英字 A→Z -->
@@ -343,70 +486,71 @@
             <li>渡邉&nbsp;邦宏</li>
             <li>山口&nbsp;裕輝</li>
           </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">プロジェクト運営</h3>
+          <div class="grid sm:grid-cols-2 gap-4 text-gray-700">
+            <ul class="space-y-1">
+              <li>松尾 豊</li>
+              <li>岩澤 有祐</li>
+              <li>川﨑 竜一</li>
+            </ul>
+            <ul class="space-y-1">
+              <li>小島 武</li>
+              <li>小橋 洋平</li>
+              <li>原田 憲旺</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- 管理 -->
-          <p class="mt-8 text-base">
-            <span class="font-semibold">プロジェクト運営：</span>
-            松尾 豊, 岩澤 有祐, 川﨑 竜一, 小島 武, 小橋 洋平, 原田 憲旺
+  <!-- ===== Footer / Acknowledgements ===== -->
+  <footer class="bg-gray-800 text-white py-16" role="contentinfo">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-6">謝辞・プロジェクト背景</h2>
+      <p class="leading-relaxed mb-6">
+        この成果は、<strong>NEDO（国立研究開発法人新エネルギー・産業技術総合開発機構）</strong>の助成事業
+        「ポスト5G情報通信システム基盤強化研究開発事業」（JPNP20017）の結果得られたものです。
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8 mt-12">
+        <div>
+          <h3 class="font-semibold mb-3">リンク</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://github.com/matsuolab/tanuki" class="text-blue-300 hover:text-blue-100 underline">GitHub Repository</a></li>
+            <li><a href="https://huggingface.co/weblab-GENIAC" class="text-blue-300 hover:text-blue-100 underline">HuggingFace Models</a></li>
+            <li><a href="https://zenn.dev/p/matsuolab" class="text-blue-300 hover:text-blue-100 underline">Tech Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold mb-3">お問い合わせ</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://github.com/tanuki-llm/tanuki-llm.github.io/issues" class="text-blue-300 hover:text-blue-100 underline">GitHub Issues</a></li>
+            <li>技術的な質問・バグ報告</li>
+            <li>研究協力のご相談</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold mb-3">ライセンス</h3>
+          <p class="text-sm">
+            Apache 2.0 License<br>
+            オープンソースプロジェクト<br>
+            商用利用可能
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== Related Sources ===== -->
-  <section class="mb-32">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center">関連ソース</h3>
-
-      <div class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <div class="p-6 leading-relaxed text-gray-800">
-          <ul class="list-disc list-inside space-y-2">
-            <li>
-              畠山 歓, “日本語の作文および対話性能向上のための合成データ生成と大規模言語モデル「Tanuki」の構築”,
-              言語処理学会第31回年次大会 (NLP2025) 併設ワークショップ JLR2025 招待講演, 2025-03-14,
-              <a href="https://jedworkshop.github.io/JLR2025/materials/b-1.pdf"
-                 target="_blank" rel="noopener noreferrer"
-                 class="text-indigo-600 hover:underline">発表資料</a>
-            </li>
-            <li>
-              太田 晋, “FinePersonas を用いた日本語指示データの合成”,
-              NLP2025 併設ワークショップ JLR2025, 2025-03-14,
-              <a href="https://jedworkshop.github.io/JLR2025/materials/a-2.pdf"
-                 target="_blank" rel="noopener noreferrer"
-                 class="text-indigo-600 hover:underline">発表資料</a>
-            </li>
-          </ul>
-        </div>
+      
+      <div class="border-t border-gray-600 mt-12 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2024 Tanuki LLM Project. All rights reserved.</p>
+        <p class="mt-2">Powered by GENIAC Phase 2 | NEDO ポスト5G情報通信システム基盤強化研究開発事業</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== Acknowledgements ===== -->
-  <section class="mb-32">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center">謝辞</h3>
-
-      <div class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <div class="p-6 leading-relaxed text-gray-800">
-          この成果は，NEDO（国立研究開発法人新エネルギー・産業技術総合開発機構）の助成事業
-          「ポスト５Ｇ情報通信システム基盤強化研究開発事業」（JPNP20017）の結果得られたものです．
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="bg-slate-900 text-gray-300 text-sm py-8">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <span>&copy; Matsuo-Iwasawa Lab. All Rights Reserved.</span>
-      <a class="hover:text-white underline-offset-4"
-         href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener">
-        GitHub&nbsp;Repository
-      </a>
     </div>
   </footer>
 
-  
 </body>
 </html>
