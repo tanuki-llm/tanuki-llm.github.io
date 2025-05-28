@@ -109,7 +109,7 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <!-- メインタイトル（H1）にキーワード最適化 -->
       <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-        <span class="text-indigo-600">日本語での対話・作文性能に力点を置いた
+        <span class="text-indigo-600">日本語での対話・作文性能に力点を置いた<br class="hidden sm:inline" />
           大規模言語モデルの開発 <br class="hidden sm:inline" />
       </h1>
       
@@ -124,6 +124,17 @@
 
       <!-- ボタン群 -->
       <nav class="flex flex-wrap justify-center gap-3 mt-10" role="navigation" aria-label="プロジェクトリンク">
+        <a href="https://colab.research.google.com/drive/1SzjCvrES3UqxqgqyZuIrNYvV882AIibO#scrollTo=pa2aqJEctwnz"
+          target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-5 py-2 rounded-full bg-green-600 text-white hover:bg-green-500 transition-colors"
+          aria-label="Tanuki LLMデモ（Google Colab）">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+            <path d="M12 2l7 4v12l-7 4-7-4V6l7-4z" /> <!-- Colab風のアイコンが必要であれば差し替えてください -->
+          </svg>
+          Demo (Google Colab)
+        </a>
         <a href="https://github.com/matsuolab/tanuki" target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 px-5 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
           aria-label="Tanuki LLM GitHubリポジトリ（公開用版）">
@@ -167,17 +178,6 @@
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
               alt="GitHub Logo" class="h-5 w-5" width="20" height="20" />
           お問合せ
-        </a>
-        <a href="https://colab.research.google.com/drive/1SzjCvrES3UqxqgqyZuIrNYvV882AIibO#scrollTo=pa2aqJEctwnz"
-          target="_blank" rel="noopener noreferrer"
-          class="flex items-center gap-2 px-5 py-2 rounded-full bg-green-600 text-white hover:bg-green-500 transition-colors"
-          aria-label="Tanuki LLMデモ（Google Colab）">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-            <path d="M12 2l7 4v12l-7 4-7-4V6l7-4z" /> <!-- Colab風のアイコンが必要であれば差し替えてください -->
-          </svg>
-          Demo (Google Colab)
         </a>
       </nav>
     </div>
@@ -298,32 +298,42 @@
 
   <!-- ===== Result ===== -->
   <section class="mb-32">
-    <div class="max-w-4xl mx-auto px-6">
+    <!-- max-w-4xl を解除して横いっぱいに -->
+    <div class="max-w-none mx-auto px-6">
       <h2 class="text-3xl font-bold text-center">評価結果・ベンチマーク</h2>
+
       <figure class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <img src="Result_JTMB.png" alt="LLM leaderboard 3 を用いたベンチマーク結果 (Japanese MT-Bench - Nejumi )"
-             class="w-2/3 mx-auto object-cover" loading="lazy" />
-        <figcaption class="p-6 text-sm text-gray-700 leading-relaxed"></figcaption>
+        <img
+          src="Result_JTMB.png"
+          alt="LLM leaderboard 3 を用いたベンチマーク結果 (Japanese MT-Bench - Nejumi)"
+          class="w-full h-auto object-cover"
+          loading="lazy"
+        />
+        <figcaption class="p-6 text-sm text-gray-700 leading-relaxed">
           LLM leaderboard 3において、
           <strong>Taunuki 8B は、8B級では開発完了報告当時でSOTAの性能を示し、</strong>
           <strong>Taunuki 8×8B は、Calm3-22BやChatGPT3.5と同等の性能を示した。</strong>
         </figcaption>
       </figure>
-      
-      <figure class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
-        <img src="Resulet_Chat.png" alt="ChatBot Arena"
-             class="w-2/3 mx-auto object-cover" loading="lazy" />
-        <figcaption class="p-6 text-sm text-gray-700 leading-relaxed">
-          <strong>Tanuki-8×8B は、オープンモデルにおいてに最高性能の日本語能力を達成</strong>し、GPT-4o-mini を上回る結果を示した。
-          サンプル数が少ないため統計的有意差は確認できなかったものの、多様で高性能な対話・作文能力を有することが示唆された。
 
-          第一弾: 開発メンバーを中心に評価 (24年8月中旬): 1800件 
-	        第二弾: 公開版を仮運用 (24年10月ー12月): 500件程度 
-              *開発メンバーの評価関与，統計的評価にはサンプル数不足があることは注意
+      <figure class="mt-6 bg-white shadow-lg rounded-2xl overflow-hidden ring-1 ring-slate-100">
+        <img
+          src="Resulet_Chat.png"
+          alt="ChatBot Arena"
+          class="w-full h-auto object-cover"
+          loading="lazy"
+        />
+        <figcaption class="p-6 text-sm text-gray-700 leading-relaxed">
+          <strong>Tanuki-8×8B は、オープンモデルにおいて最高性能の日本語能力を達成</strong>し、
+          GPT-4o-mini を上回る結果を示した。サンプル数が少ないため統計的有意差は確認できなかったものの、
+          多様で高性能な対話・作文能力を有することが示唆された。<br />
+          第一弾: 開発メンバーを中心に評価 (24年8月中旬): 1800件<br />
+          第二弾: 公開版を仮運用 (24年10月ー12月): 500件程度<br />
+          *開発メンバーの評価関与，統計的評価にはサンプル数不足があることは注意
         </figcaption>
       </figure>
     </div>
-  </section>
+</section>
 
   <!-- ===== Tutorial Cards ===== -->
   <section class="mt-24 mb-32">
